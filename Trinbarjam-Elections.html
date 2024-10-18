@@ -1,0 +1,390 @@
+<!-- Information Technology 2024 School Based Assessment Program Implementation aspect -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Official website of the Trinbarjam Elections Commission.">
+    <meta name="author" content="Kaelin Malcolm">
+    <title>Trinbarjam Elections Commission</title>
+
+    <!-- Link to Google Fonts (Open Sans) -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS implement -->
+    <style>
+        /* body styling, white text with open sans font */
+        body {
+            color:white;
+            background: linear-gradient(135deg, black, rgb(45,42,40)); /* Gradient background */
+            font-family: 'Open Sans', sans-serif; /* Uses Open Sans as the default font */
+        }
+
+        /* The class styling for the top section of webpage */
+        .top-section {
+            height: 250px;
+            background-color:red;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px; /* No vertical padding but 20pixels of horizontal padding */
+        }
+
+        /* The logo class to adjust the aspect ratio */
+        .logo {
+            height: 153px;
+            width: auto;
+        }
+
+        /* Center class which allows for text to be centre aligned with appropriate flex */
+        .centre-text {
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        /* Right class which allows for text to be aligned on right with appropriate flex */
+        .right-text {
+            text-align: right;
+            flex-grow: 1;
+        }
+
+        /* The weight of boldness */
+        h2, b {
+            font-weight: 700;
+        }
+
+        /* The style for horizontal line, separating the top section from the rest of the page */
+        hr {
+            border: none;
+            height: 4px;
+            background-color:white;
+        }
+
+        /* The size for the table */
+        table {
+            width: 600px;
+        }
+
+        /* The border styling for the table */
+        table, th, td {
+            border: 1px solid white;
+            border-collapse: collapse;
+        }
+
+        /* The styling for the table heading */
+        caption {
+            font-size: x-large;
+            font-weight: bold;
+            border: 1px solid white;
+            border-collapse: collapse;
+        }
+
+        /* Allows every other record of data from table to be red */
+        tr:nth-child(odd) {
+            background-color:red;
+        }
+
+        /* A class which implements a container to hold both tables in line with each other */
+        .table-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 5px;
+        }
+
+        /* Styling for the hyperlink that directs reader to past election results */
+        a {
+            text-decoration: none;
+            color: red; /* Text color stays red */
+            font-weight: bold;
+            font-size: 18px;
+            border-bottom: 2px solid transparent; /* Creates underline effect on hover */
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+        }
+
+        /* Styling for hyperlink when you hover over it */
+        a:hover {
+            color:white; /* Changes color of text to white on hover */
+            border-bottom: 2px solid darkred; /* Darker red underline on hover */
+        }
+
+        /* A class used to style the hyperlink in a box format */
+        .link-box {
+            display: flex; /* Uses flex to center the text inside the link box */
+            margin: 20px auto; /* Allows the link to be centered on the page */
+            justify-content: center; /* Centers the text horizontally */
+            align-items: center; /* Centers the text vertically */
+            text-decoration: none;
+            color: red; /* Forms a red text color */
+            background-color: white; /* Forms the initial background color */
+            padding: 15px; /* Padding to create the box */
+            border-radius: 5px; /* Slightly rounded corners */
+            font-weight: bold;
+            font-size: 24px; /* Larger font size */
+            width: 50%; /* Sets the width to half of the page */
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Sets the transition into the hovering */
+        }
+
+        /* A class which allows styling to the link box when hovered on */
+        .link-box:hover {
+            background-color:red; /* Changes the background color on hover */
+            transform: scale(1.055); /* Enlarges the hyperlink box on hover */
+        }
+
+        .footer {
+            height: 250px; /* Same height as the top section */
+            background-color: red; /* Same background color as the top section */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            position: relative;
+        }
+
+        .footer a {
+            color: white; /* Link color */
+            margin: 0 10px; /* Margin between links */
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline; /* Underline effect on hover */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- The top section that has the logo on the left border and the title centered -->
+    <div class="top-section">
+        <img src="https://7b5c5d54c1d0b7e370d7.cdn6.editmysite.com/uploads/b/7b5c5d54c1d0b7e370d74f076c7b00d9436c0bacb2181983b08b3e16be2e927f/TTEC%20(LOGO)_1646237182.png?width=2400&optimize=medium" alt="Trinbarjam Elections Logo" class="logo">
+        <h1 class="centre-text">
+            <b>Trinbarjam Elections Results</b>
+        </h1>
+    </div>
+
+    <hr>
+
+    <br/><br/><br/>
+    <h1 class="centre-text">
+        <i>Election results for the year 2024</i>
+    </h1>
+    <br/><br/><br/><br/>
+    
+    <div class="table-container">
+        <table id="constituency_table"> <!-- Allows for js implementation (initalizes as variable) -->
+            <caption>Constituency Table</caption>
+            <tr>
+                <th><b>Constituency</b></th>
+                <th><b>No. of electors</b></th>
+                <th><b>No. of votes cast</b></th>
+                <th><b>No. of absentees</b></th>
+            </tr>
+
+            <tr>
+                <td>St. Paris</td>
+                <td class="right-text">12500</td>
+                <td class="right-text">7750</td>
+                <td class="right-text">4750</td>
+            </tr>
+
+            <tr>
+                <td>St. Lyon</td>
+                <td class="right-text">9500</td>
+                <td class="right-text">6650</td>
+                <td class="right-text">2850</td>
+            </tr>
+
+            <tr>
+                <td>St. Bastille</td>
+                <td class="right-text">11500</td>
+                <td class="right-text">6210</td>
+                <td class="right-text">5290</td>
+            </tr>
+
+            <tr>
+                <td>St. Bordeaux</td>
+                <td class="right-text">10050</td>
+                <td class="right-text">6030</td>
+                <td class="right-text">4020</td>
+            </tr>
+
+            <tr>
+                <td>St. Monaco</td>
+                <td class="right-text">12000</td>
+                <td class="right-text">9600</td>
+                <td class="right-text">2400</td>
+            </tr>
+
+            <tr>
+                <td>St. Brest</td>
+                <td class="right-text">11000</td>
+                <td class="right-text">8030</td>
+                <td class="right-text">2970</td>
+            </tr>
+
+            <tr>
+                <td>St. Marseille</td>
+                <td class="right-text">9250</td>
+                <td class="right-text">4625</td>
+                <td class="right-text">4625</td>
+            </tr>
+
+            <tr>
+                <td>St. Eiffel</td>
+                <td class="right-text">10950</td>
+                <td class="right-text">7227</td>
+                <td class="right-text">3723</td>
+            </tr>
+
+            <tr>
+                <td>St. Rennes</td>
+                <td class="right-text">9000</td>
+                <td class="right-text">6930</td>
+                <td class="right-text">2070</td>
+            </tr>
+
+            <tr>
+                <td>St. Louvre</td>
+                <td class="right-text">10300</td>
+                <td class="right-text">5871</td>
+                <td class="right-text">4429</td>
+            </tr>
+
+            <tr>
+                <td>St. Nice</td>
+                <td class="right-text">8500</td>
+                <td class="right-text">4080</td>
+                <td class="right-text">4420</td>
+            </tr>
+
+            <tr>
+                <!-- Total to be calculated using js (all ids are variables) -->
+                <td><b>TOTAL</b></td>
+                <td class="right-text" id="total_electors">0</td>
+                <td class="right-text" id="total_votes">0</td>
+                <td class="right-text" id="total_absentees">0</td>
+            </tr>
+        </table>
+
+        <table id="party_table">
+            <caption>Party Table</caption>
+            <tr>
+                <th><b>Party Acronym</b></th>
+                <th><b>Party Total Votes</b></th>
+                <th><b>Votes Percentage</b></th>
+            </tr>
+
+            <tr>
+                <td class="centre-text"><i>DAP</i></td>
+                <td class="right-text">22042</td>
+                <td class="right-text" id="dap_percent">0</td>
+            </tr>
+
+            <tr>
+                <td class="centre-text"><i>UPM</i></td>
+                <td class="right-text">22006</td>
+                <td class="right-text" id="upm_percent">0</td>
+            </tr>
+
+            <tr>
+                <td class="centre-text"><i>PDR</i></td>
+                <td class="right-text">8561</td>
+                <td class="right-text" id="pdr_percent">0</td>
+            </tr>
+
+            <tr>
+                <td class="centre-text"><i>WNA</i></td>
+                <td class="right-text">20136</td>
+                <td class="right-text" id="wna_percent">0</td>
+            </tr>
+
+            <tr>
+                <td><b>TOTAL</b></td>
+                <td class="right-text" id="total_party_votes">0</td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- JavaScript implement -->
+    <script>
+        // Function which allows the calculation of the total consitutency votes
+        function calculate_constituency_totals() {
+            const table = document.getElementById("constituency_table");
+            let total_electors = 0;
+            let total_votes = 0;
+            let total_absentees = 0;
+
+            // Loops through the table rows to find cumulative sum (skips header and total row)
+            for (let i = 1; i < table.rows.length - 1; i++) {
+                total_electors += parseInt(table.rows[i].cells[1].innerText);
+                total_votes += parseInt(table.rows[i].cells[2].innerText);
+                total_absentees += parseInt(table.rows[i].cells[3].innerText);
+            }
+
+            // Updates the values in the table with the new calculated value
+            document.getElementById("total_electors").innerText = total_electors;
+            document.getElementById("total_votes").innerText = total_votes;
+            document.getElementById("total_absentees").innerText = total_absentees;
+        }
+
+        // Function which allows the calculation of the total party votes
+        function calculate_party_totals() {
+            const table = document.getElementById("party_table");
+            let total_party_votes = 0;
+
+            // Loops through the table rows to find cumulative sum (skips header and total row)
+            for (let i = 1; i < table.rows.length - 1; i++) {
+                total_party_votes += parseInt(table.rows[i].cells[1].innerText);
+            }
+
+            // Updates the value in the table with the new calculated value
+            document.getElementById("total_party_votes").innerText = total_party_votes;
+        }
+
+        // Function which allows the calculation of the respective party percentages
+        function calculate_party_percents() {
+            const total_party_votes = parseInt(document.getElementById("total_party_votes").innerText);
+            const dap_votes = parseInt(document.querySelector("#party_table tr:nth-child(2) td:nth-child(2)").innerText);
+            const upm_votes = parseInt(document.querySelector("#party_table tr:nth-child(3) td:nth-child(2)").innerText);
+            const pdr_votes = parseInt(document.querySelector("#party_table tr:nth-child(4) td:nth-child(2)").innerText);
+            const wna_votes = parseInt(document.querySelector("#party_table tr:nth-child(5) td:nth-child(2)").innerText);
+
+            // Calculates the respective party percentage to the nearest whole number
+            const dap_percent = ((dap_votes / total_party_votes) * 100).toFixed(0) + '%';
+            const upm_percent = ((upm_votes / total_party_votes) * 100).toFixed(0) + '%';
+            const pdr_percent = ((pdr_votes / total_party_votes) * 100).toFixed(0) + '%';
+            const wna_percent = ((wna_votes / total_party_votes) * 100).toFixed(0) + '%';
+
+            // Updates the value in the table with the new calculated values
+            document.getElementById("dap_percent").innerText = dap_percent;
+            document.getElementById("upm_percent").innerText = upm_percent;
+            document.getElementById("pdr_percent").innerText = pdr_percent;
+            document.getElementById("wna_percent").innerText = wna_percent;
+        }
+
+        // Function calling to execute code
+        calculate_constituency_totals();
+        calculate_party_totals();
+        calculate_party_percents();
+    </script>
+    <br/><br/><br/><br/>
+
+    <a href="https://jambaypastelections.com" class="link-box" target="_blank">Past election results</a>
+    
+    <br/><br/>
+
+    <footer class="footer">
+        <div>
+            <p>&copy; 2024 Trinbarjam Elections Commission | 
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=trinbarjam@gmail.com" target="_blank">Contact Us</a> | 
+            <a href="terms_service.html">Terms of Service</a> | 
+            <a href="privacy.html">Privacy Policy</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
